@@ -25,8 +25,8 @@ if (process.env.SLACK_REQUEST_LOG_ENABLED === "1") {
   app.use(args => {
     logger.debug(
       "Dumping request data for debugging...\n\n" +
-      JSON.stringify(args, null, 2) +
-      "\n"
+        JSON.stringify(args, null, 2) +
+        "\n"
     );
     args.next();
   });
@@ -150,8 +150,8 @@ app.command("/open-modal", ({ ack, body, context }) => {
 app.view("task-modal", ({ body, ack, context }) => {
   logger.debug(
     "view_submission view payload:\n\n" +
-    JSON.stringify(body.view, null, 2) +
-    "\n"
+      JSON.stringify(body.view, null, 2) +
+      "\n"
   );
 
   const stateValues = body.view.state.values;
@@ -203,6 +203,10 @@ app.view("task-modal", ({ body, ack, context }) => {
                 type: "mrkdwn",
                 text: `*Description:*\n${description}`
               }
+              {
+                type: "mrkdwn",
+                text: `*Description:*\n${description}`
+              }
             ]
           }
         ]
@@ -210,8 +214,8 @@ app.view("task-modal", ({ body, ack, context }) => {
       .then(res => {
         logger.debug(
           "chat.postEphemeral response:\n\n" +
-          JSON.stringify(res, null, 2) +
-          "\n"
+            JSON.stringify(res, null, 2) +
+            "\n"
         );
         ack();
       })
