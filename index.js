@@ -202,7 +202,7 @@ app.view("task-modal", ({ body, ack, context }) => {
               {
                 type: "mrkdwn",
                 text: `*Description:*\n${description}`
-              }
+              },
               {
                 type: "mrkdwn",
                 text: `*Description:*\n${description}`
